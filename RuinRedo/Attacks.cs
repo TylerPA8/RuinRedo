@@ -65,12 +65,12 @@ namespace RuinRedo
         }
 
 
-        public Attack(string AttackName, int Accuracy, int MinDmg, int MaxDmg, List<int> atkPosition, List<int> TargetPosition, List <Status> Statuses, int StatusDuration, int StatusAmount)
+        public Attack(string AttackName, int Accuracy, int MinDmg, int MaxDmg, List<int> AtkPosition, List<int> TargetPosition, List <Status> Statuses, int StatusDuration, int StatusAmount)
         {
             this.attackName = AttackName;
             this.minDmg = MinDmg;
             this.maxDmg = MaxDmg;
-            this.atkPosition = atkPosition;
+            this.atkPosition = AtkPosition;
             this.targetPosition = TargetPosition;
             this.statuses = Statuses;
             this.statusDuration = StatusDuration;
