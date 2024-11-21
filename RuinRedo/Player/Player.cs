@@ -8,12 +8,13 @@ namespace RuinRedo.Player
 {
     internal class Player : Creature
     {
-        public Player (string name, int ac, int maxhp, int curhp, List<Attack> attacks, List<Status>? status, int level, int exp) : base(name, ac, maxhp, curhp, status, level, exp) 
+        public Player (string name, int speed, int dodge, int curhp, int maxhp, List<Attack> attacks, List<Status>? status, int level, int exp) : base(name, speed, dodge, curhp, maxhp, status, level, exp) 
         {
             this.name = name;
-            this.ac = ac;
-            this.maxhp = maxhp;
+            this.speed = speed;
+            this.dodge = dodge;
             this.curhp = curhp;
+            this.maxhp = maxhp;
             this.attacks = attacks;
             this.status = status;
             this.level = level;

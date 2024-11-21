@@ -4,14 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RuinRedo.Player.PlayerClasses
+namespace RuinRedo.Player.Player_Classes
 {
     internal class Phalanx : Player
     {
-        public Phalanx(string name, int ac, int maxhp, int curhp, List <Attack> attacks, List<Status>? status, int level, int exp) : base(name, ac, maxhp, curhp, attacks, status, level, exp)
+        public Phalanx (string name, int speed, int dodge, int curhp, int maxhp, List <Attack> attacks, List<Status>? status, int level, int exp) : base(name, speed, dodge, curhp, maxhp, attacks, status, level, exp)
         {
             this.name = name;
-            this.ac = ac;
+            this.speed = speed;
+            this.dodge = dodge;
             this.maxhp = maxhp;
             this.curhp = curhp;
             this.attacks = GetAttacks();

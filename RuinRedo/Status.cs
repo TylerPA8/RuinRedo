@@ -9,7 +9,7 @@ namespace RuinRedo
     internal class Status
     {
         protected string statusName;
-        protected List <Creatures> effectTargets;
+        protected List <Creature> effectTargets;
         protected int effectNumber;        
         protected int effectDuration;
 
@@ -23,7 +23,7 @@ namespace RuinRedo
             get { return effectNumber; }
             set { effectNumber = value; }
         }
-        public List <Creatures> EffectTargets
+        public List <Creature> EffectTargets
         {
             get { return effectTargets; }
             set { effectTargets = value; }
@@ -34,7 +34,7 @@ namespace RuinRedo
             set { effectDuration = value; }
         }
 
-        public Status(string statusName, List <Creatures> effectTargets, int effectNumber, int effectDuration)
+        public Status(string statusName, List <Creature> effectTargets, int effectNumber, int effectDuration)
         {
             this.statusName = statusName;
             this.effectTargets = effectTargets;

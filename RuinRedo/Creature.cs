@@ -12,7 +12,8 @@ namespace RuinRedo
         protected string name;
         protected int maxhp;
         protected int curhp;
-        protected int ac;
+        protected int speed;
+        protected int dodge;
         protected List<Attack> attacks = new List<Attack>();
         protected List<Status> status = new List<Status>();
         protected int level;
@@ -29,10 +30,15 @@ namespace RuinRedo
             get { return curhp; }
             set { curhp = value; }
         }
-        public int Ac
+        public int Speed
         {
-            get { return ac; }
-            set { ac = value; }
+            get { return speed; }
+            set { speed = value; }
+        }
+        public int Dodge
+        {
+            get { return dodge; }
+            set { dodge = value; }
         }
         public List<Attack> Attacks
         {
@@ -56,17 +62,31 @@ namespace RuinRedo
         }
 
 
-        public Creature(string name, int ac, int maxhp, int curhp, List <Attack> attacks, List<Status>? status, int level, int exp)
+        public Creature(string name, int speed, int dodge, int curhp, int maxhp, List<Attack> attacks, List<Status>? status, int level, int exp)
         {
             this.name = name;
-            this.ac = ac;
-            this.maxhp = maxhp;
+            this.speed = speed;
+            this.dodge = dodge;
             this.curhp = curhp;
+            this.maxhp = maxhp;
             this.attacks = attacks;
             this.status = status;
             this.level = level;
             this.exp = exp;
         }
+
+        public Creature(string name, int speed, int dodge, int curhp, int maxhp, List<Status>? status, int level, int exp)
+        {
+            this.name = name;
+            this.speed = speed;
+            this.dodge = dodge;
+            this.curhp = curhp;
+            this.maxhp = maxhp;
+            this.status = status;
+            this.level = level;
+            this.exp = exp;
+        }
+
         public void TakeDamage(int dmg)
         {
             this.CurHp -= dmg;
@@ -75,22 +95,27 @@ namespace RuinRedo
                 this.Die();
             }
         }
+
         public void Die()
         {
             //TODO die method
         }
+
         public virtual void SelectTarget(List<Creature> enemies)
         {
 
         }
+
         public virtual void SelectAttack()
         {
 
         }
-        public void GainExp(int e)
+
+        public void GainExp(int exp)
         {
             this.Exp += exp;
         }
+
         public virtual void LevelUp()
         {
             this.Level++;
