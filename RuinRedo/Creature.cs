@@ -16,6 +16,7 @@ namespace RuinRedo
         protected int dodge;
         protected List<Attack> attacks = new List<Attack>();
         protected List<Status> status = new List<Status>();
+        protected Dictionary <string, int> resistances = new Dictionary <string, int>();
         protected int level;
         protected int exp;
 
@@ -50,6 +51,11 @@ namespace RuinRedo
             get { return status; }
             set { status = value; }
         }
+        public Dictionary<string, int> Resistances
+        {
+            get { return resistances; }
+            set { resistances = value; }
+        }
         public int Level
         {
             get { return level; }
@@ -62,7 +68,7 @@ namespace RuinRedo
         }
 
 
-        public Creature(string name, int speed, int dodge, int curhp, int maxhp, List<Attack> attacks, List<Status>? status, int level, int exp)
+        public Creature(string name, int speed, int dodge, int curhp, int maxhp, List<Attack>? attacks, List<Status>? status, Dictionary <string, int>? resistances, int level, int exp)
         {
             this.name = name;
             this.speed = speed;
@@ -71,21 +77,16 @@ namespace RuinRedo
             this.maxhp = maxhp;
             this.attacks = attacks;
             this.status = status;
+            this.resistances = resistances;
             this.level = level;
             this.exp = exp;
         }
 
-        public Creature(string name, int speed, int dodge, int curhp, int maxhp, List<Status>? status, int level, int exp)
+        public Creature()
         {
-            this.name = name;
-            this.speed = speed;
-            this.dodge = dodge;
-            this.curhp = curhp;
-            this.maxhp = maxhp;
-            this.status = status;
-            this.level = level;
-            this.exp = exp;
+
         }
+
 
         public void TakeDamage(int dmg)
         {
@@ -100,6 +101,10 @@ namespace RuinRedo
         {
             //TODO die method
         }
+
+        public virtual void Move(Creature [] ca) { }
+
+        public virtual void Move(Creature[] ca, dirBool dB) { }
 
         public virtual void SelectTarget(List<Creature> enemies)
         {

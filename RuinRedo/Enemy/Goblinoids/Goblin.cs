@@ -8,7 +8,7 @@ namespace RuinRedo.Enemy.Goblinoids
 {
     internal class Goblin : Enemy
     {
-        public Goblin(string name, int speed, int dodge, int curhp, int maxhp, List<Attack> attacks, List<Status>? status, int level, int exp) : base(name, speed, dodge, curhp, maxhp, attacks, status, level, exp)
+        public Goblin(string name, int speed, int dodge, int curhp, int maxhp, List<Attack> attacks, List<Status>? status, Dictionary<string, int>? resistances, int level, int exp) : base(name, speed, dodge, curhp, maxhp, attacks, status, resistances, level, exp)
         {
             this.name = name;
             this.speed = speed;
@@ -17,6 +17,7 @@ namespace RuinRedo.Enemy.Goblinoids
             this.curhp = curhp;
             this.attacks = AttackLibrary.GoblinAttacks;
             this.status = status;
+            this.resistances = new Dictionary<string, int> (){ { "Move", 10 }, { "Poison", 60 } };
             this.level = level;
             this.exp = exp;
         }

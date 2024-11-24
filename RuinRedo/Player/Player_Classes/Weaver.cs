@@ -8,7 +8,7 @@ namespace RuinRedo.Player.Player_Classes
 {
     internal class Weaver : Player
     {
-        public Weaver(string name, int speed, int dodge, int curhp, int maxhp, List<Attack> attacks, List<Status>? status, int level, int exp) : base(name, speed, dodge, curhp, maxhp, attacks, status, level, exp)
+        public Weaver(string name, int speed, int dodge, int curhp, int maxhp, List<Attack> attacks, List<Status>? status, Dictionary<string, int>? resistances, int level, int exp) : base(name, speed, dodge, curhp, maxhp, attacks, status, resistances, level, exp)
         {
             this.name = name;
             this.speed = speed;
@@ -17,6 +17,7 @@ namespace RuinRedo.Player.Player_Classes
             this.curhp = curhp;
             this.attacks = GetAttacks();
             this.status = status;
+            this.resistances = new Dictionary<string, int>() { };
             this.level = level;
             this.exp = exp;
         }

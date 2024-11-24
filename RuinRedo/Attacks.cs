@@ -14,7 +14,7 @@ namespace RuinRedo
         protected int maxDmg;
         protected List<int> atkPosition;
         protected List<int> targetPosition;
-        protected List <Status> statuses;
+        protected List<Status> statuses;
         protected int statusDuration;
         protected int statusAmount;
 
@@ -53,19 +53,9 @@ namespace RuinRedo
             get { return statuses; }
             set { statuses = value; }
         }
-        public int StatusDuration
-        {
-            get { return statusDuration; }
-            set { statusDuration = value; }
-        }
-        public int StatusAmount
-        {
-            get { return statusAmount; }
-            set { statusAmount = value; }
-        }
 
 
-        public Attack(string AttackName, int Accuracy, int MinDmg, int MaxDmg, List<int> AtkPosition, List<int> TargetPosition, List <Status> Statuses, int StatusDuration, int StatusAmount)
+        public Attack(string AttackName, int Accuracy, int MinDmg, int MaxDmg, List<int> AtkPosition, List<int> TargetPosition, List <Status> Statuses)
         {
             this.attackName = AttackName;
             this.minDmg = MinDmg;
@@ -73,8 +63,7 @@ namespace RuinRedo
             this.atkPosition = AtkPosition;
             this.targetPosition = TargetPosition;
             this.statuses = Statuses;
-            this.statusDuration = StatusDuration;
-            this.statusAmount = StatusAmount;
+
         }
     }
 }
