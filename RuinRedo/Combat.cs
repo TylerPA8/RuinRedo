@@ -8,6 +8,6 @@ namespace RuinRedo
 {
     public class Combat
     {
-        public Creature[] initiativeTracker; 
+        public Dictionary<Creature, int> initiativeTracker = new(); 
     }
 }

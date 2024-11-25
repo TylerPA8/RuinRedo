@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RuinRedo.Statuses
 {
-    internal class Status
+    public class Status
     {
         protected int effect;
         protected int duration;

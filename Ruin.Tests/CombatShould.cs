@@ -1,24 +1,24 @@
 using FluentAssertions;
-using Microsoft.VisualStudio.TestPlatform.ObjectModel.Utilities;
 using RuinRedo;
-
 namespace Ruin.Tests
 {
     [TestClass]
     public class CombatShould
     {
         [TestMethod]
-        public void LoadsEmptyInitiativeArray()
+        public void LoadsEmptyInitiative()
         {
             // Arrange 
-            Creature[] expectedArray = [];
+            Dictionary<Creature, int> Initiative= new Dictionary<Creature, int> ();
+
 
             // Act 
             var sut = new Combat(); 
             
 
             // Assert 
-            sut.initiativeTracker.Should().BeEmpty();
+            sut.initiativeTracker.Should().BeEquivalentTo(Initiative);
+            sut.initiativeTracker.Should().BeOfType<Dictionary<Creature, int>>();
         }
     }
 }
