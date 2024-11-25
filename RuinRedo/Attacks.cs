@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RuinRedo
 {
-    internal class Attack
+    public class Attack
     {
         protected string attackName;
         protected int accuracy;

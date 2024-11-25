@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RuinRedo
 {
-    internal class Status
+    public class Status
     {
         protected string statusName;
         protected List <Creature> effectTargets;

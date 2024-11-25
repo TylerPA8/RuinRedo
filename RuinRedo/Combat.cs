@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace RuinRedo
 {
-    internal class Combat
+    public class Combat
     {
+        public Creature[] initiativeTracker; 
     }
 }

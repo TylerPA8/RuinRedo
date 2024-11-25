@@ -24,46 +24,46 @@ Creature[] players = { Block2, Block1, Migan, Asher };
 
 Creature[] enemies = { Goblin1, Goblin2, Block1, Block2 };
 
-foreach (Creature o in players)
-{
-    Console.Write("[ ");
-    if (o is Block)
-        Console.Write($"Block ");
-    else
-        Console.Write($"{ o.Name} ");
-    Console.Write("]");
-}
-Console.Write("\t");
-foreach (Creature o in enemies)
-{
-    Console.Write("[ ");
-    if (o is Block)
-        Console.Write($"Block ");
-    else
-        Console.Write($"{o.Name} ");
-    Console.Write("]");
-}
+//foreach (Creature o in players)
+//{
+//    Console.Write("[ ");
+//    if (o is Block)
+//        Console.Write($"Block ");
+//    else
+//        Console.Write($"{ o.Name} ");
+//    Console.Write("]");
+//}
+//Console.Write("\t");
+//foreach (Creature o in enemies)
+//{
+//    Console.Write("[ ");
+//    if (o is Block)
+//        Console.Write($"Block ");
+//    else
+//        Console.Write($"{o.Name} ");
+//    Console.Write("]");
+//}
 Console.WriteLine();
 
-Asher.Move(players);
+//Asher.Move(players);
 
-foreach (Creature o in players)
-{
-    Console.Write("[ ");
-    if (o is Block)
-        Console.Write($"Block ");
-    else
-        Console.Write($"{o.Name} ");
-    Console.Write("]");
-}
-Console.Write("\t");
-foreach (Creature o in enemies)
-{
-    Console.Write("[ ");
-    if (o is Block)
-        Console.Write($"Block ");
-    else
-        Console.Write($"{o.Name} ");
-    Console.Write("]");
-}
-Console.WriteLine();
+//foreach (Creature o in players)
+//{
+//    Console.Write("[ ");
+//    if (o is Block)
+//        Console.Write($"Block ");
+//    else
+//        Console.Write($"{o.Name} ");
+//    Console.Write("]");
+//}
+//Console.Write("\t");
+//foreach (Creature o in enemies)
+//{
+//    Console.Write("[ ");
+//    if (o is Block)
+//        Console.Write($"Block ");
+//    else
+//        Console.Write($"{o.Name} ");
+//    Console.Write("]");
+//}
+//Console.WriteLine();

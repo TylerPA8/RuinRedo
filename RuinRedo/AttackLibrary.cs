@@ -23,7 +23,7 @@ namespace RuinRedo
 
 
             //Phalanx - Sturdy and average damage, bleeds chance, back line blaster build option
-            Attack Puncture = new("Puncture", 0, 0, 0, [0, 1, 1, 1], [1, 1, 1, 1], new List<Status> { Push puncPush = new(1, 0)} ); //Test Puncture
+            Attack Puncture = new("Puncture", 0, 0, 0, [0, 1, 1, 1], [1, 1, 1, 1], null); //Test Puncture
             //Attack Puncture = new("Puncture", 10, 3, 8, [0, 1, 1, 1], [1, 1, 1, 1], null, 0, 0); //Basic damage, pushes target back
             Attack Skewer = new("Skewer", 10, 2, 4, [0, 0, 1, 1], [1, 1, 0, 0], null); //Bleed chance, hits target and 1 behind it.
             Attack ShieldBash = new("Shield Bash", 15, 1, 4, [0, 1, 1, 1], [1, 1, 1, 1], null); //Stun chance

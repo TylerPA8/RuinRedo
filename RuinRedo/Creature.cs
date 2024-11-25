@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RuinRedo
 {
-    internal class Creature : IDamageable, ILevelable
+    public class Creature : IDamageable, ILevelable
     {
         protected string name;
         protected int maxhp;
