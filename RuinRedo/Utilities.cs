@@ -23,5 +23,16 @@ namespace RuinRedo
                     Console.Write($"{a.AttackName}, ");
             Console.WriteLine($"\n\n");
         }
+        internal static int Roll() 
+        { 
+            Random rnd = new Random();
+            return rnd.Next(1, 101); 
+        }
+        internal static int Roll(int mod)
+        {
+            Random rnd = new Random();
+            return (rnd.Next(1, 101)+ mod);
+        }
+
     }
 }

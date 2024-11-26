@@ -22,14 +22,18 @@ namespace RuinRedo.Enemy
             this.exp = exp;
         }
 
-        public override void SelectTarget(List<Creature> enemies)
-        {
-            //TODO auto select a target
-        }
+
         public override void SelectAttack()
         {
             //TODO auto select an appropriate attack
         }
+        
+
+        public override void SelectTarget(List<Creature> enemies)
+        {
+            //TODO auto select a target
+        }
+
 
         public override void Move(Creature[] party, dirBool db)
         {

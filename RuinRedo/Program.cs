@@ -20,9 +20,14 @@ Utilities.DisplayCreature(Migan);
 Utilities.DisplayCreature(Goblin1);
 Utilities.DisplayCreature(Goblin2);
 
-Creature[] players = { Block2, Block1, Migan, Asher };
+Creature[] players = { Migan, Asher };
 
-Creature[] enemies = { Goblin1, Goblin2, Block1, Block2 };
+Creature[] enemies = { Goblin1, Goblin2 };
+
+var output = Combat.Initiative(players, enemies);
+foreach (KeyValuePair<Creature, int> x in output)
+    Console.Write($"| {x.Key.Name}: {x.Value} ");
+Console.Write("|");
 
 //foreach (Creature o in players)
 //{

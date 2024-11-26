@@ -8,18 +8,32 @@ namespace RuinRedo
 {
     public class Combat
     {
-        public Dictionary<Creature, int> initiativeTracker = new();
-        Creature[] players;
-        Creature[] enemies;
 
-
-        public Combat(Creature[] players, Creature[] enemies)
+        public static void CombatFlow(Creature[] players, Creature[] enemies)
         {
-            this.players = players;
-            this.enemies = enemies;
+            bool combatIsActive = true;
+            var initiative = Initiative(players, enemies);
+            while (combatIsActive)
+            {
+                foreach (var c in initiative)
+                {
+
+                }
+                initiative = Initiative(players, enemies);
+            }
         }
-        public Dictionary<Creature, int> Initiative(Creature[] players, Creature[] enemies)
+        public static List<KeyValuePair<Creature, int>> Initiative(Creature[] players, Creature[] enemies)
         {
+            List<KeyValuePair<Creature, int>> initiativeTracker = new();
+            foreach (Creature p in players)
+            {
+                initiativeTracker.Add(new KeyValuePair<Creature, int>(p, Utilities.Roll(p.Speed)));
+            }
+            foreach (Creature e in enemies)
+            {
+                initiativeTracker.Add(new KeyValuePair<Creature, int>(e, Utilities.Roll(e.Speed)));
+            }
+            initiativeTracker.Sort((x,y) => y.Value.CompareTo(x.Value));
             return initiativeTracker;
         }
     }
