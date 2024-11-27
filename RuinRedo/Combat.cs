@@ -27,11 +27,13 @@ namespace RuinRedo
             List<KeyValuePair<Creature, int>> initiativeTracker = new();
             foreach (Creature p in players)
             {
-                initiativeTracker.Add(new KeyValuePair<Creature, int>(p, Utilities.Roll(p.Speed)));
+                if (p.CurHp > 0)
+                    initiativeTracker.Add(new KeyValuePair<Creature, int>(p, Utilities.Roll(p.Speed)));
             }
             foreach (Creature e in enemies)
             {
-                initiativeTracker.Add(new KeyValuePair<Creature, int>(e, Utilities.Roll(e.Speed)));
+                if (e.CurHp > 0)
+                    initiativeTracker.Add(new KeyValuePair<Creature, int>(e, Utilities.Roll(e.Speed)));
             }
             initiativeTracker.Sort((x,y) => y.Value.CompareTo(x.Value));
             return initiativeTracker;

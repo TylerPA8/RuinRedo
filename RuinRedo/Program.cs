@@ -3,6 +3,7 @@ using RuinRedo;
 using RuinRedo.Enemy.Goblinoids;
 using RuinRedo.Player.Player_Classes;
 using RuinRedo.Statuses;
+using System.Text;
 
 var attackLibrary = new AttackLibrary();
 attackLibrary.InitializeAttacks();
@@ -20,55 +21,15 @@ Utilities.DisplayCreature(Migan);
 Utilities.DisplayCreature(Goblin1);
 Utilities.DisplayCreature(Goblin2);
 
-Creature[] players = { Migan, Asher };
+Asher.SelectAttack();
 
-Creature[] enemies = { Goblin1, Goblin2 };
+//Creature[] players = { Block1, Block2, Migan, Asher };
 
-var output = Combat.Initiative(players, enemies);
-foreach (KeyValuePair<Creature, int> x in output)
-    Console.Write($"| {x.Key.Name}: {x.Value} ");
-Console.Write("|");
+//Creature[] enemies = { Goblin1, Goblin2, Block1, Block2 };
 
-//foreach (Creature o in players)
-//{
-//    Console.Write("[ ");
-//    if (o is Block)
-//        Console.Write($"Block ");
-//    else
-//        Console.Write($"{ o.Name} ");
-//    Console.Write("]");
-//}
-//Console.Write("\t");
-//foreach (Creature o in enemies)
-//{
-//    Console.Write("[ ");
-//    if (o is Block)
-//        Console.Write($"Block ");
-//    else
-//        Console.Write($"{o.Name} ");
-//    Console.Write("]");
-//}
-Console.WriteLine();
+//var output = Combat.Initiative(players, enemies);
+//foreach (KeyValuePair<Creature, int> x in output)
+//    Console.Write($"| {x.Key.Name}: {x.Value} ");
+//Console.Write("|");
 
-//Asher.Move(players);
 
-//foreach (Creature o in players)
-//{
-//    Console.Write("[ ");
-//    if (o is Block)
-//        Console.Write($"Block ");
-//    else
-//        Console.Write($"{o.Name} ");
-//    Console.Write("]");
-//}
-//Console.Write("\t");
-//foreach (Creature o in enemies)
-//{
-//    Console.Write("[ ");
-//    if (o is Block)
-//        Console.Write($"Block ");
-//    else
-//        Console.Write($"{o.Name} ");
-//    Console.Write("]");
-//}
-//Console.WriteLine();

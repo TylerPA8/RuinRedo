@@ -45,10 +45,54 @@ namespace RuinRedo.Player
         public override void SelectTarget(List<Creature> enemies)
         {
 
+
         }
         public override void SelectAttack()
         {
+            Console.OutputEncoding = Encoding.UTF8;
+            Console.CursorVisible = false;
 
+            (int left, int top) = Console.GetCursorPosition();
+            var selectedOption = 0;
+            var decorator = $"✅ \u001b[31m";
+            ConsoleKeyInfo key;
+            bool isSelected = false;
+
+            List<string> atkNames = new List<string>();
+            foreach (Attack a in this.Attacks)
+            {
+                atkNames.Add(a.AttackName);
+            }
+
+            while (!isSelected)
+            {
+                Console.SetCursorPosition(left, top);
+
+                for (int i = 0; i < atkNames.Count; i++)
+                {
+                    Console.Write($"{(selectedOption == i ? decorator : "   ")}{atkNames[i]}\u001b[0m");
+                }
+
+                key = Console.ReadKey(false);
+
+                switch (key.Key)
+                {
+                    case ConsoleKey.LeftArrow:
+                        selectedOption = selectedOption == 0 ? atkNames.Count - 1 : selectedOption - 1;
+                        break;
+
+                    case ConsoleKey.RightArrow:
+                        selectedOption = selectedOption == atkNames.Count - 1 ? 0 : selectedOption + 1;
+                        break;
+
+                    case ConsoleKey.Enter:
+                        isSelected = true;
+                        break;
+                }
+            }
+
+            Console.WriteLine($"\n{decorator}You selected {atkNames[selectedOption]}");
+            Console.ReadLine();
         }
         public override void LevelUp()
         {
